@@ -1,0 +1,27 @@
+trigger:
+  batch: true
+  branches:
+    include:
+      - 'main'
+      - 'bug/*'
+      - 'feature/*'
+      - 'hotfix/*'
+
+pr: none
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  - template: templates/variables.yaml
+
+name: $[format('{0}.{1}.{2}-{3}.{4}', variables['MAJOR_VERSION'], variables['MINOR_VERSION'], variables['PATCH_VERSION'], variables['Build.SourceBranchName'], variables['RUN_NUMBER'])]
+
+stages:
+- stage:
+
+  jobs:
+  - job: CI
+    displayName: 'Clean, Restore, Build, Pack & Publish'
+    steps:
+    - template: templates/build.yaml

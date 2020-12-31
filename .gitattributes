@@ -1,0 +1,21 @@
+* text eol=crlf
+*.dtsx binary
+*.dll binary
+
+*.png binary
+*.jpg binary
+*.gif binary
+*.tiff binary
+
+*.otf binary
+*.eot binary
+*.svg binary
+*.ttf binary
+*.woff binary
+
+*.zip binary
+*.exe binary
+*.pdb binary
+*.bak binary
+*.dat binary
+*.nupkg binary

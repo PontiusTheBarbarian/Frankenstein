@@ -1,0 +1,11 @@
+﻿<Project>
+	<PropertyGroup>
+		<Authors>Liam Appleyard</Authors>
+		<IsPackable>true</IsPackable>
+		<Version>1.0.0.0</Version>
+		<InformationalVersion>1.0.0.0+11088ffb-1a65-4b73-863d-3b3f75bbbc00</InformationalVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<Copyright>Copyright © 2020</Copyright>
+	</PropertyGroup>
+</Project>

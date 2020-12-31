@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7400A8AD-52FD-4778-A46A-CB66E0BEE957}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		build.cake = build.cake
+		Directory.Build.props = Directory.Build.props
+		Monster.yaml = Monster.yaml
+		nuget.config = nuget.config
+		README.md = README.md
+		setup.cmd = setup.cmd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3AF0440B-D8D1-4BEB-8B29-BB8D51D47BEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B2A8419A-89BE-40BC-84A4-01601EE43749}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipeline", "pipeline", "{C1EB1E1D-97DD-4D42-9885-1A83A63C4AC6}"
+	ProjectSection(SolutionItems) = preProject
+		pipeline\azure.build-pipeline.yaml = pipeline\azure.build-pipeline.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{1356279C-EAB7-4C12-8229-9881F9DC1606}"
+	ProjectSection(SolutionItems) = preProject
+		pipeline\templates\build.yaml = pipeline\templates\build.yaml
+		pipeline\templates\variables.yaml = pipeline\templates\variables.yaml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frankenstein", "src\Frankenstein\Frankenstein.csproj", "{C2F813DB-4B05-443D-98B4-383AF3F0C344}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344}.Debug|x64.Build.0 = Debug|Any CPU
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344}.Debug|x86.Build.0 = Debug|Any CPU
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344}.Release|x64.ActiveCfg = Release|Any CPU
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344}.Release|x64.Build.0 = Release|Any CPU
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344}.Release|x86.ActiveCfg = Release|Any CPU
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1EB1E1D-97DD-4D42-9885-1A83A63C4AC6} = {7400A8AD-52FD-4778-A46A-CB66E0BEE957}
+		{1356279C-EAB7-4C12-8229-9881F9DC1606} = {C1EB1E1D-97DD-4D42-9885-1A83A63C4AC6}
+		{C2F813DB-4B05-443D-98B4-383AF3F0C344} = {3AF0440B-D8D1-4BEB-8B29-BB8D51D47BEB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D3C2495-1076-4140-A1CD-AA1E64D5DD6B}
+	EndGlobalSection
+EndGlobal

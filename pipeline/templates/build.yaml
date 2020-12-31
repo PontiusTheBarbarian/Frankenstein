@@ -1,0 +1,21 @@
+steps:
+- task: Cake@2
+  displayName: "Run build.cake"
+  inputs:
+    script: 'build.cake'
+    target: 'Default'
+    verbosity: 'Verbose'
+    Version: $(CAKE_VERSION)
+    arguments: >-
+     --Solution=$(SOLUTION_FILE)
+     --OutputDirectory=$(Build.ArtifactStagingDirectory)
+     --Major=$(MAJOR_VERSION)
+     --Minor=$(MINOR_VERSION)
+     --Patch=$(PATCH_VERSION)
+     --RunNumber=$(RUN_NUMBER)
+
+- task: PublishBuildArtifacts@1
+  displayName: ".NET Publish"
+  inputs:
+    PathtoPublish: $(Build.ArtifactStagingDirectory)
+    ArtifactName: drop

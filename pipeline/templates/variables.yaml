@@ -1,0 +1,19 @@
+variables:
+
+# Tools
+- name: CAKE_VERSION
+  value: '0.38.5'
+
+# Versioning
+- name: MAJOR_VERSION
+  value: 1
+- name: MINOR_VERSION
+  value: 0
+- name: PATCH_VERSION
+  value: 0
+- name: RUN_NUMBER
+  value: $[counter(1, 1)]
+
+# Project
+- name: SOLUTION_FILE
+  value: Frankenstein.sln
