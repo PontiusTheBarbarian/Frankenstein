@@ -7,8 +7,8 @@ namespace Frankenstein.Models
 	{
 		[JsonProperty("version")]
 		public string Version { get; set; }
-		[JsonProperty("templates")]
-		public Dictionary<string, Template> Templates { get; set; }
+		[JsonProperty("tasks")]
+		public List<TaskTemplate> TaskTemplates { get; set; }
 		[JsonProperty("variables")]
 		public List<Variable> Variables { get; set; }
 	}

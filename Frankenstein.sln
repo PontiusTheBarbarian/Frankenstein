@@ -33,6 +33,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frankenstein", "src\Frankenstein\Frankenstein.csproj", "{C2F813DB-4B05-443D-98B4-383AF3F0C344}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pipeline", "pipeline", "{A16D5207-2D7D-4C22-8CF3-E283E18DC438}"
+	ProjectSection(SolutionItems) = preProject
+		pipeline\azure.build-pipeline.yaml = pipeline\azure.build-pipeline.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "artifacts", "artifacts", "{47512EE6-0E61-4AC9-99AB-ACFB91D9818D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{5A693304-872E-4E2F-A2C2-61EAC7CB2786}"
+	ProjectSection(SolutionItems) = preProject
+		pipeline\templates\build.yaml = pipeline\templates\build.yaml
+		pipeline\templates\variables.yaml = pipeline\templates\variables.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +76,7 @@ Global
 		{C1EB1E1D-97DD-4D42-9885-1A83A63C4AC6} = {7400A8AD-52FD-4778-A46A-CB66E0BEE957}
 		{1356279C-EAB7-4C12-8229-9881F9DC1606} = {C1EB1E1D-97DD-4D42-9885-1A83A63C4AC6}
 		{C2F813DB-4B05-443D-98B4-383AF3F0C344} = {3AF0440B-D8D1-4BEB-8B29-BB8D51D47BEB}
+		{5A693304-872E-4E2F-A2C2-61EAC7CB2786} = {A16D5207-2D7D-4C22-8CF3-E283E18DC438}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D3C2495-1076-4140-A1CD-AA1E64D5DD6B}

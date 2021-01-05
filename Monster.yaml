@@ -2,30 +2,44 @@ version: '1'
 
 variables:
 - name: 'SOLUTION_FILE'
-  value: 'Test.sln'
-- name: 'WEB_API_NAME'
+  value: 'TestProject.sln'
+- name: 'WEB_API'
   value: 'Api'
-- name: 'WEB_API_DIR'
-  value: 'src/Api'
+- name: 'SERVICE_CONNECTION_NAME'
+  value: 'PAYG-SERVICE-CONN'
+- name: 'RESOURCE_GROUP_NAME'
+  value: 'LATESTTEMPLATE'
 
-templates:
-  create-solution:
-    engine: 'dotnet'
+tasks:
+- task: 'DotNetCore@1'
+  name: 'create-solution'
+  inputs:
     command: 'new serv-sln'
     arguments: '--allow-scripts=yes'
-  create-webapi:
-    engine: 'dotnet'
+- task: 'DotNetCore@1'
+  name: 'create-webapi'
+  dependsOn:
+  - 'create-solution'
+  inputs:
     command: 'new serv-webapi'
-    arguments: '--output=$(WEB_API_DIR) -dock -key -aud -auth=BasicAuth'
-  create-webapi-unit-tests:
-    engine: 'dotnet'
+    arguments: '--output=src/$(WEB_API) --authentication=BasicAuth --key-vault --auditing'
+- task: 'DotNetCore@1'
+  name: 'create-webapi-unit-tests'
+  inputs:
     command: 'new nunit'
-    arguments: '--output=tests/$(WEB_API_NAME).Unit.Tests'
-  create-azuredevops-pipeline:
-    engine: 'dotnet'
+    arguments: '--output=tests/$(WEB_API).Unit.Tests'
+- task: 'DotNetCore@1'
+  name: 'create-azuredevops-pipeline'
+  inputs:
     command: 'new serv-cicd'
-    arguments: '-ca -dep --solution=$(SOLUTION_FILE) --web-api=$(WEB_API_DIR)/$(WEB_API_NAME).csproj -scn=PAYG-SERVICE-CONN -webn=LATESTWEBAPI123 -rgn=LATESTTEMPLATE'
-  add-cake-tool:
-    engine: 'dotnet'
+    arguments: '--solution=$(SOLUTION_FILE) --web-api=$(WEB_API) --service-connection-name=$(SERVICE_CONNECTION_NAME) --resource-group-name=$(RESOURCE_GROUP_NAME)'
+- task: 'DotNetCore@1'
+  name: 'add-cake-ci'
+  inputs:
     command: 'new serv-cake'
-    arguments: '-nu --solution=$(SOLUTION_FILE) --web-api=$(WEB_API_DIR)/$(WEB_API_NAME).csproj'
+    dependsOn: 'create-azuredevops-pipeline'
+    arguments: '--solution=$(SOLUTION_FILE) --web-api=src/$(WEB_API)/$(WEB_API).csproj'
+- task: 'Harvest@1'
+  name: 'harvest-templates'
+  inputs:
+    arguments: 'squash.yaml .'

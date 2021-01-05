@@ -5,11 +5,9 @@ namespace Frankenstein.Extensions
 {
 	public static class StringExtensions
 	{
-		public static List<Variable> Variables { get; set; }
-
-		public static string SubstituteVariables(this string input)
+		public static string SubstituteVariables(this string input, List<Variable> variables)
 		{
-			foreach(var variable in Variables)
+			foreach(var variable in variables)
 			{
 				if (input.Contains(variable.AsPowershellVariable()))
 				{
